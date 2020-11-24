@@ -18,6 +18,9 @@
 + (NSURLSessionDataTask *)POST:(NSString *)URLString parameters:(id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure root:(BaseADViewController *)rootctrl;
 
 // Post form
++ (NSURLSessionDataTask *)POST:(NSString *)URLString parameters:(id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure retries:(NSInteger)retries root:(BaseADViewController *)rootctrl;
+
+// Post form
 + (NSURLSessionDataTask *)POST2:(NSString *)URLString parameters:(id)parameters success:(void (^)(int code, id respObj, NSString *msg))success failure:(void (^)(NSError *error))failure root:(BaseADViewController *)rootctrl;
 
 // Post 图片

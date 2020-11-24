@@ -100,6 +100,21 @@
 }
 
 #pragma mark - 单例post/form
++ (NSURLSessionDataTask *)POST:(NSString *)URLString parameters:(id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure retries:(NSInteger)retries root:(BaseADViewController *)rootctrl {
+    return [AFHttpManager POST:URLString parameters:parameters success:success failure:^(NSError *error) {
+        NSLog(@"%s %@", __func__, error);
+        if (retries-1 > 0) {
+            [self POST:URLString parameters:parameters success:success failure:failure retries:retries-1 root:rootctrl];
+        }
+        else {
+            if (failure) {
+                failure(error);
+            }
+        }
+    } root:rootctrl];
+}
+
+#pragma mark - 单例post/form
 + (NSURLSessionDataTask *)POST2:(NSString *)URLString parameters:(id)parameters success:(void (^)(int code, id respObj, NSString *msg))success failure:(void (^)(NSError *error))failure root:(BaseADViewController *)rootctrl {
     return [AFHttpManager POST:URLString parameters:parameters success:^(id responseObject) {
         NSDictionary *dict = (NSDictionary *)responseObject;
