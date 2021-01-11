@@ -8,7 +8,7 @@
 
 #import "HBUMShare.h"
 #import <UMCommon/UMCommon.h>
-#import <WXApi.h>
+#import "WXApi.h"
 #import "AFHttpManager.h"
 #import "HBUMShareConfig.h"
 #import "MBProgressHUD+MJ.h"
