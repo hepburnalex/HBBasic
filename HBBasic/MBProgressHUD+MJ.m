@@ -19,7 +19,8 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.label.text = text;
     if (icon) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"MBProgressHUD" ofType:@"bundle"];
+        NSBundle *bundle = [NSBundle bundleWithIdentifier:@"org.cocoapods.HBBasic"];
+        NSString *path = [bundle pathForResource:@"MBProgressHUD" ofType:@"bundle"];
         NSBundle *targetBundle = [NSBundle bundleWithPath:path];
         UIImage *image = [UIImage imageNamed:icon
                                     inBundle:targetBundle
