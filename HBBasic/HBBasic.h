@@ -23,9 +23,6 @@ FOUNDATION_EXPORT const unsigned char HBBasicVersionString[];
 
 #import <HBBasic/AFHttpManager.h>
 #import <HBBasic/MBProgressHUD+MJ.h>
-#import <HBBasic/HBUMShare.h>
-#import <HBBasic/HBUMShareConfig.h>
-#import <HBBasic/HBUMShareConfigItem.h>
 
 #endif /* HBBasic_h */
 
